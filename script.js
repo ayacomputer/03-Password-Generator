@@ -5,12 +5,13 @@ var specialChar = '§!@#$%^&*()_+?><{}[]'.split();
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz'.split();
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split();
 var number = '0123456789'.split();
-var selection = ｛
+var choice = {
   sp: 0,
   low: 0,
   up: 0,
+  num: 0,
   length: 0
-｝
+}
 
 
 // Write password to the #password input
@@ -31,24 +32,29 @@ function generatePassword() {
     alert("The number is too small or too big.");
     generatePassword();
   } else {
-    length += inputLength;
+    choice.length = inputLength;
   }
 
-  var spCharConfirm = confirm("Do you want special characters?");
+  var spCharConfirm = confirm("Do you want to include special characters?");
   if (spCharConfirm) {
-    sp++;
+    choice.sp++;
   }
-  var lowCharConfirm = confirm("Do you want special characters?");
+  var lowCharConfirm = confirm("Do you want to include lowercase alphabets?");
   if (lowCharConfirm) {
-    low++;
+    choice.low++;
   }
-  var upCharConfirm = confirm("Do you want special characters?");
+  var upCharConfirm = confirm("Do you want to include uppercase alphabets?");
   if (upCharConfirm) {
-    up++;
+    choice.up++;
+  }
+  var numConfirm = confirm("Do you want numbers?");
+  if (numConfirm) {
+    choice.num++;
   }
 
-  if (sp: 0 && low: 0 && up: 0) {
-
+  if (choice.sp, 0 && choice.low, 0 && choice.up, 0 && choice.num, 0) {
+    alert("We need some characters to make your password");
+    generatePassword();
   }
 }
 
