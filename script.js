@@ -1,12 +1,12 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 var specialChar = '§!@#$%^&*()_+?><{}[]'
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var number = '0123456789'
 var choice = ""
-var password = "";
+var randomPassword = "";
 
 
 // Write password to the #password input
@@ -48,16 +48,19 @@ function generatePassword() {
     alert("We need some characters to make your password");
     generatePassword();
   }
-  for (let i = 0; i < pwLength.length; i++) {
-    password += password.charAt(Math.floor(Math.random() * pwLength.length));
+  for (let i = 0; i < pwLength; i++) {
+    randomPassword += choice.charAt(Math.floor(Math.random() * pwLength));
   }
-  return password;
+  return randomPassword;
 }
 generatePassword();
 
 // Add event listener to generate button
-function writePassword(evt) {
-  var element = evt.target;
-  element.card.children[1].textContent = password;
-}
-generateBtn.addEventListener("click", writePassword());
+
+generateBtn.addEventListener("click", function () {
+  console.log('This button works');
+  document.getElementById('#password').innerHTML = randomPassword;
+  console.log(choice);
+  console.log(randomPassword);
+  console.log(password);
+});
