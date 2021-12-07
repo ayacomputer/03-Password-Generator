@@ -34,7 +34,10 @@ function generatePassword() {
   } else {
     choice.length = inputLength;
   }
-
+  if (!spCharConfirm && !lowCharConfirm && !upCharConfirm && !numConfirm) {
+    alert("We need some characters to make your password");
+    generatePassword();
+  }
   var spCharConfirm = confirm("Do you want to include special characters?");
   if (spCharConfirm) {
     choice.sp++;
@@ -47,15 +50,12 @@ function generatePassword() {
   if (upCharConfirm) {
     choice.up++;
   }
-  var numConfirm = confirm("Do you want numbers?");
+  var numConfirm = confirm("Do you want to include numbers?");
   if (numConfirm) {
     choice.num++;
   }
 
-  if (choice.sp, 0 && choice.low, 0 && choice.up, 0 && choice.num, 0) {
-    alert("We need some characters to make your password");
-    generatePassword();
-  }
+
 }
 
 
