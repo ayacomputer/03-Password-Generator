@@ -48,17 +48,16 @@ function generatePassword() {
     alert("We need some characters to make your password");
     generatePassword();
   }
-  for (let i = 0; n = pwLength.length; i++) {
-    password += charAt(Math.floor(Math.random() * n));
+  for (let i = 0; i < pwLength.length; i++) {
+    password += password.charAt(Math.floor(Math.random() * pwLength.length));
   }
   return password;
 }
-
-
 generatePassword();
 
 // Add event listener to generate button
-function writePassword() {
-  //  add more
+function writePassword(evt) {
+  var element = evt.target;
+  element.card.children[1].textContent = password;
 }
 generateBtn.addEventListener("click", writePassword());
