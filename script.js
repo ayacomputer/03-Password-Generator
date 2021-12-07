@@ -1,17 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var specialChar = '§!@#$%^&*()_+?><{}[]'.split();
-var lowerCase = 'abcdefghijklmnopqrstuvwxyz'.split();
-var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split();
-var number = '0123456789'.split();
-var choice = {
-  sp: 0,
-  low: 0,
-  up: 0,
-  num: 0,
-  length: 0
-}
+var specialChar = '§!@#$%^&*()_+?><{}[]'
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var number = '0123456789'
+var choice = ""
+var password = "";
 
 
 // Write password to the #password input
@@ -24,42 +19,46 @@ function writePassword() {
 }
 
 function generatePassword() {
-  var inputLength = prompt("Choose the password length(8 - 128 characters)")
+  var pwLength = prompt("Choose the password length(8 - 128 characters)")
   if (!Number.isNaN) {
     alert("Please enter a valid number.");
     generatePassword();
-  } else if (inputLength < 8 || inputLength > 128) {
+  } else if (pwLength < 8 || pwLength > 128) {
     alert("The number is too small or too big.");
     generatePassword();
-  } else {
-    choice.length = inputLength;
+  }
+
+  var spCharConfirm = confirm("Do you want to include special characters?");
+  if (spCharConfirm) {
+    choice += specialChar;
+  }
+  var lowCharConfirm = confirm("Do you want to include lowercase alphabets?");
+  if (lowCharConfirm) {
+    choice += lowerCase;
+  }
+  var upCharConfirm = confirm("Do you want to include uppercase alphabets?");
+  if (upCharConfirm) {
+    choice += upperCase;
+  }
+  var numConfirm = confirm("Do you want to include numbers?");
+  if (numConfirm) {
+    choice += number;
   }
   if (!spCharConfirm && !lowCharConfirm && !upCharConfirm && !numConfirm) {
     alert("We need some characters to make your password");
     generatePassword();
   }
-  var spCharConfirm = confirm("Do you want to include special characters?");
-  if (spCharConfirm) {
-    choice.sp++;
+  for (let i = 0; n = pwLength.length; i++) {
+    password += charAt(Math.floor(Math.random() * n));
   }
-  var lowCharConfirm = confirm("Do you want to include lowercase alphabets?");
-  if (lowCharConfirm) {
-    choice.low++;
-  }
-  var upCharConfirm = confirm("Do you want to include uppercase alphabets?");
-  if (upCharConfirm) {
-    choice.up++;
-  }
-  var numConfirm = confirm("Do you want to include numbers?");
-  if (numConfirm) {
-    choice.num++;
-  }
-  if (choice.key[0, 0, 0, 1])
-
+  return password;
 }
 
 
 generatePassword();
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+function writePassword() {
+  //  add more
+}
+generateBtn.addEventListener("click", writePassword());
