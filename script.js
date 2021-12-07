@@ -52,6 +52,14 @@ function generatePassword() {
     generatePassword();
     return;
   }
+  // if the preferred password length is longer than the length of selected characters
+  if (pwLength > choice - 4) {
+    for (let i = 0; i < pwLength; i++) {
+      randomPassword += choice.charAt(Math.floor(Math.random() * pwLength));
+    }
+
+  }
+  //*
   for (let i = 0; i < pwLength; i++) {
     randomPassword += choice.charAt(Math.floor(Math.random() * choice.length));
   }
