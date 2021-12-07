@@ -54,7 +54,7 @@ function generatePassword() {
   if (numConfirm) {
     choice.num++;
   }
-
+  if (choice.key[0, 0, 0, 1])
 
 }
 
