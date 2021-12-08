@@ -56,7 +56,7 @@ function generatePassword() {
   for (let i = 0; i < pwLength; i++) {
     randomPassword += choice.charAt(Math.floor(Math.random() * choice.length));
   }
-  //randomly mixing the password//
+
   var sliceLength = Math.floor(Math.random() * randomPassword.length);
   var slice1 = randomPassword.slice(0, sliceLength);
   var slice2 = randomPassword.slice(sliceLength, password.length);
