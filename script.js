@@ -59,7 +59,7 @@ function generatePassword() {
 
   var sliceLength = Math.floor(Math.random() * randomPassword.length);
   var slice1 = randomPassword.slice(0, sliceLength);
-  var slice2 = randomPassword.slice(sliceLength, password.length);
+  var slice2 = randomPassword.slice(sliceLength, randomPassword.length);
   return slice2 + slice1;
 }
 
