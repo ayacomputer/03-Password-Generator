@@ -57,7 +57,6 @@ function generatePassword() {
     for (let i = 0; i < pwLength; i++) {
       randomPassword += choice.charAt(Math.floor(Math.random() * pwLength));
     }
-
   }
   //*
   for (let i = 0; i < pwLength; i++) {
