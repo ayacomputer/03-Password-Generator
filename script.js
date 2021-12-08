@@ -52,17 +52,15 @@ function generatePassword() {
     generatePassword();
     return;
   }
-  // if the preferred password length is longer than the length of selected characters
-  if (pwLength > choice - 4) {
-    for (let i = 0; i < pwLength; i++) {
-      randomPassword += choice.charAt(Math.floor(Math.random() * pwLength));
-    }
-  }
-  //*
+
   for (let i = 0; i < pwLength; i++) {
     randomPassword += choice.charAt(Math.floor(Math.random() * choice.length));
   }
-  return randomPassword;
+  //randomly mixing the password//
+  var sliceLength = Math.floor(Math.random() * randomPassword.length);
+  var slice1 = randomPassword.slice(0, sliceLength);
+  var slice2 = randomPassword.slice(sliceLength, password.length);
+  return slice2 + slice1;
 }
 
 
