@@ -21,4 +21,4 @@ and/or numbers.
 ## Product
 Link: https://ayacomputer.github.io/03-Password-Generator/
 
-![the screen shot of the application](passwordGenerator.png)
+![the screen shot of the application](product.png)
