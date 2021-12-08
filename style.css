@@ -7,11 +7,10 @@
 
 :root {
   --darkColor: rgb(32, 33, 36);
-  --lightColor: wheat;
-  --primeColor: rgba(150, 202, 27, 0.911);
-  --secondColor: rgb(94, 86, 22);
+  --lightColor: rgb(236, 243, 233);
+  --primeColor: rgba(223, 100, 78, 0.911);
+  --secondColor: rgba(190, 172, 9, 0.87);
   --primeBorder: dashed 2px var(--lightColor);
-  --secondBorder: solid 1px var(--lightColor);
   --borderRadius: 1rem;
  }
 
@@ -44,7 +43,9 @@ header {
 }
 
 .card {
-  background-color: var(--secondColor);
+  color: var(--secondColor);
+  font-family: inherit;
+  background-color: var(--darkColor);
   border: var(--primeBorder);
   border-radius: var(--borderRadius);
   box-shadow: var(--darkColor) 0px 2px 8px 0px;
@@ -86,11 +87,11 @@ header {
 
 .btn {
   border: var(--primeBorder);
-  background-color: var(--darkColor);
+  background-color: var(--secondColor);
   border-radius: var(--borderRadius);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: var(--lightColor);
+  color: var(--darkColor);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -103,6 +104,8 @@ header {
 .btn:hover {
   box-shadow: inset 0px 0px 8px var(--primeColor), 0 0 15px var(--primeColor);
   transition: all 0.5s ease-in-out;
+  background-color: var(--primeColor);
+  color:var(--darkColor);
 }
 
 button[disabled] {
@@ -152,12 +155,4 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
-}
-
-footer, #contact {
-  font-size:0.5rem;
-    text-align: center;
- padding-bottom: 5rem;
- text-decoration: none;
-  color: var(--lightColor);
 }
