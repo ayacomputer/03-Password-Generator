@@ -16,11 +16,11 @@ function generatePassword() {
   if (isNaN(pwLength)) {
     alert("Please enter a valid number.");
     generatePassword();
-    return;
+
   } else if (pwLength < 8 || pwLength > 128) {
     alert("The number is too small or too big.");
     generatePassword();
-    return;
+
   }
 
   var spCharConfirm = confirm("Do you want to include special characters?");
@@ -50,16 +50,20 @@ function generatePassword() {
   if (!spCharConfirm && !lowCharConfirm && !upCharConfirm && !numConfirm) {
     alert("We need some characters to make your password.");
     generatePassword();
-    return;
+
   }
 
   for (let i = 0; i < pwLength; i++) {
     randomPassword += choice.charAt(Math.floor(Math.random() * choice.length));
+    console.log('this is working');
+    console.log(randomPassword);
   }
 
   var sliceLength = Math.floor(Math.random() * randomPassword.length);
   var slice1 = randomPassword.slice(0, sliceLength);
   var slice2 = randomPassword.slice(sliceLength, randomPassword.length);
+  console.log(slice1);
+  console.log(slice2);
   return slice2 + slice1;
 }
 
